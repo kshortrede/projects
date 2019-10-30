@@ -9,3 +9,7 @@ Next Tasks:
 * Implement gold
 * Implement random power-ups in the field
 * Camera movement
+
+Specs:
+- Game is programmed in c# using the Game Development Engine "Unity3D"
+- Use of Object-Oriented programming
