@@ -6,10 +6,11 @@ User is able to create new units based on the gold he has, and units fight each 
 Next Tasks:
 
 * Add 2 new units
+* Add hero special attack
 * Implement random power-ups in the field
 * Camera movement
 * Generate Random name for the Units 
-
+* Add Sounds effects 
 Specs:
 - Game is programmed in c# using the Game Development Engine "Unity3D"
 - Use of Object-Oriented programming
