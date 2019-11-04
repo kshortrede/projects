@@ -6,7 +6,6 @@ User is able to create new units based on the gold he has, and units fight each 
 Next Tasks:
 
 * Add 2 new units
-* Implement gold
 * Implement random power-ups in the field
 * Camera movement
 
