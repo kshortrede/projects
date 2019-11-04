@@ -8,6 +8,7 @@ Next Tasks:
 * Add 2 new units
 * Implement random power-ups in the field
 * Camera movement
+* Generate Random name for the Units 
 
 Specs:
 - Game is programmed in c# using the Game Development Engine "Unity3D"
