@@ -10,7 +10,8 @@ Next Tasks:
 * Implement random power-ups in the field
 * Camera movement
 * Generate Random name for the Units 
-* Add Sounds effects 
+* Add Sounds effects (Unit movement, Unit attack, Unit death, Background music, Unit Generation)
+
 Specs:
 - Game is programmed in c# using the Game Development Engine "Unity3D"
 - Use of Object-Oriented programming
