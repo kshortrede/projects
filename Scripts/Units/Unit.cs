@@ -33,7 +33,22 @@ public abstract class Unit : object
     public float Damage { get => damage; set => damage = value; }
     public void addAttacker(GameObject g)
     {
-        attackers.Add(g);
+        bool isAttackerAlreadyAdded = false;
+
+        for(int i =0; i < attackers.Count; i++)
+        {
+            if(attackers[i] == g)
+            {
+                isAttackerAlreadyAdded = true;
+                break;
+            }
+        }
+
+        if (!isAttackerAlreadyAdded)
+        {
+            attackers.Add(g);
+        }
+
     }
     public void removeAttacker(GameObject g)
     {

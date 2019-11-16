@@ -22,6 +22,7 @@ public class CreateUnit : MonoBehaviour
     //Finish these methods to be able to create different units
     //Finish these to be able to create units from a Noxus perspective
     //Finish these from editor to produce the right prefabs
+    
 
     private void Start()
     {
@@ -31,65 +32,106 @@ public class CreateUnit : MonoBehaviour
     }
     void Update()
     {
-        
+        UpdateButtonStateDisable();
+        UpdateButtonStateEnable();
     }
 
-    public void UpdateButtonState()
+    public void UpdateButtonStateDisable()
     {
-        if(Global.coins < Global.archerPrice)
+        if (Global.coins <= 0 || Global.coins < Global.archerPrice)
         {
             anim[0].SetTrigger("Disabled");
-            anim[1].SetTrigger("Disabled");
-            anim[2].SetTrigger("Disabled");
-        } else if (Global.coins > Global.archerPrice && Global.coins < Global.fighterPrice)
+            anim[0].SetBool("isDisabled", true);
+        }
+        if (Global.coins <= 0 || Global.coins < Global.fighterPrice)
         {
-            //Allow only archers to be clicked
-            anim[0].ResetTrigger("Disabled");
             anim[1].SetTrigger("Disabled");
-            anim[2].SetTrigger("Disabled");
-        } else if (Global.coins > Global.fighterPrice)
+            anim[1].SetBool("isDisabled", true);
+        }
+        if (Global.coins <= 0 || Global.coins < Global.heroPrices[0])
         {
-            anim[0].ResetTrigger("Disabled");
-            anim[1].ResetTrigger("Disabled");
-            //Check for Hero
+            anim[2].SetTrigger("Disabled");
+            anim[2].SetBool("isDisabled", true);
         }
         
+    }
+    public void UpdateButtonStateEnable()
+    {
+        if (Global.coins > Global.archerPrice)
+        {
+            anim[0].SetBool("isDisabled", false);
+        }
+        if (Global.coins > Global.fighterPrice)
+        {
+            anim[1].SetBool("isDisabled", false);
+        }
+        if (Global.coins > Global.heroPrices[0])
+        {
+            anim[2].SetBool("isDisabled", false);
+        }
     }
 
     public void createArcher()
     {
-        System.Random rnd = new System.Random();
-        int pos = rnd.Next(0, 4);
-        Instantiate(archer, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+        if(anim[0].GetBool("isDisabled") == false)
+        {
+            System.Random rnd = new System.Random();
+            int pos = rnd.Next(0, 4);
+            Instantiate(archer, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+            Global.coins -= Global.archerPrice;
+        }
     }
     public void createFighter()
     {
-        System.Random rnd = new System.Random();
-        int pos = rnd.Next(0, 4);
-        Instantiate(fighter, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+        if (anim[1].GetBool("isDisabled") == false)
+        {
+            System.Random rnd = new System.Random();
+            int pos = rnd.Next(0, 4);
+            Instantiate(fighter, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+            Global.coins -= Global.fighterPrice;
+        }
     }
+
+    //Maybe use one method and randomize the creation of the unit
     public void createDarius()
     {
-        System.Random rnd = new System.Random();
-        int pos = rnd.Next(0, 4);
-        Instantiate(darius, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+        if(anim[2].GetBool("isDisabled") == false)
+        {
+            System.Random rnd = new System.Random();
+            int pos = rnd.Next(0, 4);
+            Instantiate(darius, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+            Global.coins -= Global.heroPrices[0];
+        }
+        
     }
     public void createGaren()
     {
-        System.Random rnd = new System.Random();
-        int pos = rnd.Next(0, 4);
-        Instantiate(garen, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+        if(anim[2].GetBool("isDisabled") == false)
+        {
+            System.Random rnd = new System.Random();
+            int pos = rnd.Next(0, 4);
+            Instantiate(garen, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+            Global.coins -= Global.heroPrices[0];
+        }
     }
     public void createJarvan()
     {
-        System.Random rnd = new System.Random();
-        int pos = rnd.Next(0, 4);
-        Instantiate(jarvan, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+        if (anim[2].GetBool("isDisabled") == false)
+        {
+            System.Random rnd = new System.Random();
+            int pos = rnd.Next(0, 4);
+            Instantiate(jarvan, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+            Global.coins -= Global.heroPrices[0];
+        }
     }
     public void createSwain()
     {
-        System.Random rnd = new System.Random();
-        int pos = rnd.Next(0, 4);
-        Instantiate(swain, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+        if (anim[2].GetBool("isDisabled") == false)
+        {
+            System.Random rnd = new System.Random();
+            int pos = rnd.Next(0, 4);
+            Instantiate(swain, DemaciaSpawns[pos].transform.position, Quaternion.identity);
+            Global.coins -= Global.heroPrices[0];
+        }
     }
 }
