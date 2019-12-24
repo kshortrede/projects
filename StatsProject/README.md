@@ -8,3 +8,5 @@ Application Requirements:
 * Provide a user-friendly interface
 * Provide correct results 
 * Print the results to a .txt generated in the user's folder
+
+* Provide an executable that is packaged with Java so the user doesn't need to have it installed in his/her computer
