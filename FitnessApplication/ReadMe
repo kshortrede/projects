@@ -1,0 +1,16 @@
+Fitness Application
+
+* Developing an application for a company client utilizing flutter SDK and Android Studio
+
+Application Functionalities will involve:
+
+* Main acitivity with options to enable/disable motivational notifications and reminders, go to the different services in the app
+
+* List of training exercises with explanations and videos
+* Daily Routine that the user can see, insert new exercises to, delete exercises, or modify exercises
+
+* List of foods
+* Daily food intake that the user can change by selecting eaten foods with the amount consumed
+
+There will be an approximate of 7 different activities (different screens) that will be updated based on information from database and/or previous use by the user.
+
